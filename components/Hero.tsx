@@ -26,18 +26,17 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6">
-          The Future of{" "}
+          We built NxtMRO.{" "}
           <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-            Airline MRO
+            The MRO platform
           </span>{" "}
-          is Here
+          that thinks ahead.
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-          NxtMRO brings artificial intelligence to every corner of your maintenance, repair &
-          overhaul operations — reducing downtime, eliminating manual errors, and keeping your
-          fleet airworthy around the clock.
+        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          AI-powered maintenance software built for airlines that can&apos;t afford downtime.
+          Predict failures, automate compliance, and keep every tail number airworthy.
         </p>
 
         {/* CTAs */}
@@ -46,13 +45,13 @@ export default function Hero() {
             href="/login"
             className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 hover:-translate-y-0.5"
           >
-            Access the Platform →
+            Get started
           </Link>
           <a
             href="#features"
             className="text-slate-300 hover:text-white font-semibold text-base px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-all duration-200"
           >
-            Explore Features
+            See what we do
           </a>
         </div>
 

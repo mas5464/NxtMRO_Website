@@ -16,10 +16,11 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-slate-400">
-          <a href="#features" className="hover:text-white transition-colors">Features</a>
-          <a href="#ai" className="hover:text-white transition-colors">AI Capabilities</a>
-          <a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a>
-          <a href="#stats" className="hover:text-white transition-colors">Why NxtMRO</a>
+          <a href="#features" className="hover:text-white transition-colors">What we do</a>
+          <a href="#ai" className="hover:text-white transition-colors">AI</a>
+          <a href="#how-it-works" className="hover:text-white transition-colors">The process</a>
+          <a href="#stats" className="hover:text-white transition-colors">Results</a>
+          <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">

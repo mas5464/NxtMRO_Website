@@ -1,27 +1,27 @@
 const steps = [
   {
     number: "01",
-    title: "Connect Your Fleet",
+    title: "Analyze",
     description:
-      "Onboard your aircraft registrations, component trees, and historical maintenance records. NxtMRO integrates with existing CMMS, ERP, and flight ops systems via REST APIs or file imports.",
+      "We start with a thorough review of your current workflows, fleet structure, and compliance requirements — so we understand exactly what your operation needs before we touch anything.",
   },
   {
     number: "02",
-    title: "Configure Your Operation",
+    title: "Connect & configure",
     description:
-      "Define your stations, hangars, crew certifications, and approval workflows. Set compliance rules by regulation, aircraft type, and operator-specific requirements.",
+      "We onboard your aircraft, component trees, crew certifications, and existing systems. NxtMRO integrates with your CMMS, ERP, and flight ops tools via API or file import.",
   },
   {
     number: "03",
-    title: "Let AI Optimize",
+    title: "Go live",
     description:
-      "NxtMRO's models go to work — learning your operation's patterns, building predictive baselines, and surfacing proactive recommendations to your planning and technical teams.",
+      "Your team starts working from digital job cards, compliance closes automatically, and our AI begins learning your operation's patterns from day one.",
   },
   {
     number: "04",
-    title: "Execute & Improve",
+    title: "Maintain & improve",
     description:
-      "Mechanics work from digital job cards, compliance records close automatically, and every completed task makes the model smarter. Your MRO operation continuously improves.",
+      "After go-live, our team keeps working with you — providing support, refining workflows, and continuously improving the platform as your operation evolves.",
   },
 ];
 
@@ -31,15 +31,14 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            Getting Started
+            The process
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Up and running{" "}
-            <span className="text-slate-400">in days, not months</span>
+            <span className="text-slate-400">in days, not months.</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Our onboarding team gets your operation live fast — with dedicated
-            aviation-domain specialists who understand your workflows.
+            Our aviation specialists handle the heavy lifting. You focus on flying.
           </p>
         </div>
 

@@ -19,7 +19,14 @@
       "Bash(vercel --yes --scope msosa79-8493s-projects --name nxtmro-landing)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://nxtmro-landing.vercel.app)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(vercel git *)",
+      "Bash(vercel link *)",
+      "Bash(vercel project *)",
+      "WebFetch(domain:halotemplate.framer.website)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(git push *)"
     ]
   }
 }

@@ -2,28 +2,28 @@ const capabilities = [
   {
     tag: "Predictive Intelligence",
     headline: "Catch failures before they happen",
-    body: "NxtMRO's ML models analyze sensor data, historical maintenance records, and manufacturer bulletins to predict component failures up to 72 hours in advance — giving your team time to act before an AOG event.",
-    stat: "70% reduction in unscheduled removals",
+    body: "Our ML models analyze sensor data, historical maintenance records, and manufacturer bulletins to predict component failures up to 72 hours ahead. Your team acts before the AOG — not after.",
+    stat: "70% fewer unscheduled removals",
     color: "from-blue-500 to-indigo-500",
   },
   {
     tag: "Intelligent Scheduling",
     headline: "AI that plans your hangar",
-    body: "Our scheduling engine simultaneously optimizes aircraft availability, mechanic skill sets, parts on hand, and slot constraints — generating optimal maintenance plans in seconds that would take planners hours.",
+    body: "Our scheduling engine balances aircraft availability, mechanic qualifications, parts stock, and slot constraints simultaneously — producing optimal maintenance plans in seconds that would take a planner hours.",
     stat: "40% improvement in hangar utilization",
     color: "from-violet-500 to-purple-500",
   },
   {
     tag: "Natural Language Interface",
-    headline: "Ask your MRO system anything",
-    body: "Query fleet status, pull compliance reports, or create work orders using plain language. NxtMRO's AI assistant understands aviation terminology and surfaces the right information instantly.",
+    headline: "Ask NxtMRO anything",
+    body: "Query fleet status, pull compliance reports, or open a work order in plain language. Our AI understands aviation terminology and returns the right answer instantly — no training required.",
     stat: "5× faster information retrieval",
     color: "from-cyan-500 to-blue-500",
   },
   {
     tag: "Anomaly Detection",
-    headline: "Real-time signals monitoring",
-    body: "Continuous analysis of flight data monitoring (FDM) feeds, borescope images, and ACARS messages. Automated flagging of deviations routes the right technician before a small issue becomes a delay.",
+    headline: "Problems flagged before they ground aircraft",
+    body: "We continuously analyze FDM feeds, borescope images, and ACARS messages. Deviations are flagged and routed to the right technician automatically — while there's still time to act.",
     stat: "90% reduction in missed defects",
     color: "from-emerald-500 to-teal-500",
   },
@@ -36,17 +36,16 @@ export default function AICapabilities() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            AI at the Core
+            AI capabilities
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Intelligence built for{" "}
+            Built to think,{" "}
             <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              aviation operations
+              not just track.
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            NxtMRO doesn't just digitize your processes — it learns from them,
-            optimizes them, and continuously improves your operation.
+            NxtMRO doesn&apos;t just digitize your processes — it learns from them, optimizes them, and keeps improving your operation automatically.
           </p>
         </div>
 

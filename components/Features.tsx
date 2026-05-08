@@ -7,7 +7,7 @@ const features = [
     ),
     title: "Digital Work Orders",
     description:
-      "Create, assign, and track maintenance tasks in real-time. Eliminate paper-based workflows and reduce write-ups with structured digital sign-offs.",
+      "We digitize every job card, sign-off, and write-up. Your mechanics work faster, your records stay clean, and nothing falls through the cracks.",
   },
   {
     icon: (
@@ -17,7 +17,7 @@ const features = [
     ),
     title: "Parts & Inventory",
     description:
-      "Real-time parts availability across all warehouses. Automated reorder points, supplier integrations, and full traceability from shelf to aircraft.",
+      "Real-time stock levels across every warehouse, with automated reorder points and full shelf-to-aircraft traceability built in.",
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const features = [
     ),
     title: "Regulatory Compliance",
     description:
-      "Automated compliance tracking against FAA, EASA, and ICAO requirements. Never miss an airworthiness directive or recurring inspection with built-in alerts.",
+      "Airworthiness directives, recurring inspections, and EASA/FAA requirements tracked automatically. We alert your team before a deadline — not after.",
   },
   {
     icon: (
@@ -38,7 +38,7 @@ const features = [
     ),
     title: "Fleet Tracking",
     description:
-      "Live fleet status dashboard with tail-number level visibility. Track component time, cycles, and calendar limits across your entire operation.",
+      "Tail-number level visibility across your entire fleet. Component times, cycles, and calendar limits — all in one live dashboard.",
   },
   {
     icon: (
@@ -48,7 +48,7 @@ const features = [
     ),
     title: "Crew & Certification",
     description:
-      "Manage AME licenses, ratings, and currency. Automatic expiration warnings and shift-based task assignment based on qualifications.",
+      "AME licenses, ratings, and currency managed in one place. Tasks are assigned based on qualifications, and expiry warnings go out automatically.",
   },
   {
     icon: (
@@ -58,7 +58,7 @@ const features = [
     ),
     title: "Analytics & Reporting",
     description:
-      "Executive dashboards, TAT reports, cost-per-flight-hour analysis, and customizable KPI views. Export audit-ready records in seconds.",
+      "TAT reports, cost-per-flight-hour, and executive KPI views on demand. Export audit-ready records in seconds — no spreadsheets required.",
   },
 ];
 
@@ -68,15 +68,14 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            Platform Capabilities
+            What we do
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Everything MRO needs,{" "}
-            <span className="text-slate-400">in one platform</span>
+            Every MRO workflow.{" "}
+            <span className="text-slate-400">One platform.</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            From line maintenance to heavy checks, NxtMRO covers every
-            workflow — integrated, auditable, and built for aviation.
+            From line maintenance to heavy checks, NxtMRO covers the full operation — integrated, auditable, and built for aviation from day one.
           </p>
         </div>
 
