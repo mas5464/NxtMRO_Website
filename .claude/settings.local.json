@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:framer.com)",
+      "Bash(summonaikit --mode analyze \"/Users/miguelsosa/Documents/Claude/Projects/Next generation Airline MRO Software/\")",
+      "Bash(mkdir -p \"/Users/miguelsosa/Documents/Claude/Projects/Next generation Airline MRO Software/.claude/skills\" \"/Users/miguelsosa/Documents/Claude/Projects/Next generation Airline MRO Software/.claude/agents\" \"/Users/miguelsosa/Documents/Claude/Projects/Next generation Airline MRO Software/.claude/memory\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --yes --name=nxtmro-landing)",
+      "Read(//private/tmp/**)",
+      "Bash(npx create-next-app@latest nxtmro-landing --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --yes)",
+      "Bash(rsync -a --exclude=.git /tmp/nxtmro-landing/ '/Users/miguelsosa/Documents/Claude/Projects/Next generation Airline MRO Software/')",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3099)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pkill -f \"next dev --port 3099\")",
+      "Bash(vercel --version)",
+      "Bash(vercel --yes)",
+      "Bash(vercel --yes --scope msosa79-8493s-projects)",
+      "Bash(vercel --yes --scope msosa79-8493s-projects --name nxtmro-landing)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://nxtmro-landing.vercel.app)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
