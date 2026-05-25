@@ -26,7 +26,7 @@ export default function CTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/login"
+            href="https://www.nxtmro.app/login"
             className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-base px-10 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 hover:-translate-y-0.5"
           >
             Get started

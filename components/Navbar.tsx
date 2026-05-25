@@ -25,13 +25,13 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="/login"
+            href="https://www.nxtmro.app/login"
             className="text-sm text-slate-300 hover:text-white transition-colors px-4 py-2"
           >
             Log In
           </a>
           <a
-            href="/login"
+            href="https://www.nxtmro.app/login"
             className="text-sm bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-2 rounded-lg transition-colors"
           >
             Get Started
@@ -61,7 +61,7 @@ export default function Navbar() {
           <a href="#ai" onClick={() => setOpen(false)}>AI Capabilities</a>
           <a href="#how-it-works" onClick={() => setOpen(false)}>How It Works</a>
           <a href="#stats" onClick={() => setOpen(false)}>Why NxtMRO</a>
-          <a href="/login" className="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg text-center">
+          <a href="https://www.nxtmro.app/login" className="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg text-center">
             Log In
           </a>
         </div>
