@@ -8,7 +8,24 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2.5">
+          {/* NxtMRO N icon */}
+          <div className="w-8 h-8 rounded-[7px] bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="#3b82f6"
+              strokeWidth="5"
+              strokeLinecap="round"
+            >
+              <path d="M6 27V5" />
+              <path d="M26 27V5" />
+              <path d="M6 5l20 22" />
+              <path d="M6 27 18 13.8" />
+            </svg>
+          </div>
           <span className="text-2xl font-black tracking-tight text-white">
             Nxt<span className="text-blue-400">MRO</span>
           </span>

@@ -10,51 +10,27 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          borderRadius: 8,
-          background: "linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%)",
+          borderRadius: 7,
+          background: "#0f172a",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          position: "relative",
         }}
       >
-        {/* Blue accent bar at top */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 3,
-            borderRadius: "8px 8px 0 0",
-            background: "linear-gradient(90deg, #3b82f6, #6366f1)",
-          }}
-        />
-        {/* N letter */}
-        <div
-          style={{
-            fontSize: 18,
-            fontWeight: 900,
-            color: "white",
-            fontFamily: "sans-serif",
-            letterSpacing: "-1px",
-            lineHeight: 1,
-          }}
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 32 32"
+          fill="none"
+          stroke="#3b82f6"
+          strokeWidth="5"
+          strokeLinecap="round"
         >
-          N
-        </div>
-        {/* Blue dot accent */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 5,
-            right: 6,
-            width: 4,
-            height: 4,
-            borderRadius: "50%",
-            background: "#60a5fa",
-          }}
-        />
+          <path d="M6 27V5" />
+          <path d="M26 27V5" />
+          <path d="M6 5l20 22" />
+          <path d="M6 27 18 13.8" />
+        </svg>
       </div>
     ),
     { ...size }
