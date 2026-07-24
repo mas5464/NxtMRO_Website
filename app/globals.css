@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Canvas & surfaces — warm paper, not pure white */
+  --color-paper: oklch(98% 0.004 80);
+  --color-paper-raised: oklch(96.3% 0.006 80);
+
+  /* Ink — warm graphite, not pure black */
+  --color-ink: oklch(21% 0.008 80);
+  --color-ink-muted: oklch(42% 0.008 80);
+  --color-ink-faint: oklch(60% 0.007 80);
+
+  /* Hairlines — structure, not shadow */
+  --color-line: oklch(87% 0.006 80);
+  --color-line-strong: oklch(76% 0.008 80);
+
+  /* Signature accent — instrument amber */
+  --color-amber: oklch(66% 0.15 55);
+  --color-amber-strong: oklch(57% 0.16 50);
+  --color-amber-soft: oklch(93% 0.045 65);
+  --color-amber-text: oklch(46% 0.135 48);
+
+  /* One deliberate dark panel (footer) */
+  --color-ink-panel: oklch(17% 0.01 80);
+  --color-ink-panel-line: oklch(30% 0.012 80);
+  --color-paper-on-panel: oklch(93% 0.006 80);
+  --color-paper-on-panel-muted: oklch(68% 0.01 80);
+
+  /* Radius scale — sharp by default, never a monoculture */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-paper: var(--color-paper);
+  --color-paper-raised: var(--color-paper-raised);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-line: var(--color-line);
+  --color-line-strong: var(--color-line-strong);
+  --color-amber: var(--color-amber);
+  --color-amber-strong: var(--color-amber-strong);
+  --color-amber-soft: var(--color-amber-soft);
+  --color-amber-text: var(--color-amber-text);
+  --color-ink-panel: var(--color-ink-panel);
+  --color-ink-panel-line: var(--color-ink-panel-line);
+  --color-paper-on-panel: var(--color-paper-on-panel);
+  --color-paper-on-panel-muted: var(--color-paper-on-panel-muted);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+
+  --font-display: var(--font-barlow-semi-condensed);
+  --font-sans: var(--font-barlow);
+  --font-mono: var(--font-plex-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Signature entrance for the instrument-panel diagrams — settles into focus once */
+@keyframes instrument-settle {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.instrument-settle {
+  animation: instrument-settle 600ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instrument-settle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

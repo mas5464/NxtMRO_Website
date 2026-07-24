@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const steps = [
   {
     number: "01",
@@ -15,7 +17,7 @@ const steps = [
     number: "03",
     title: "Go live",
     description:
-      "Your team starts working from digital job cards, compliance closes automatically, and our AI begins learning your operation's patterns from day one.",
+      "Your team starts working from digital job cards, compliance closes automatically, and the platform begins learning your operation's patterns from day one.",
   },
   {
     number: "04",
@@ -27,46 +29,44 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-slate-950">
+    <section id="how-it-works" className="py-24 bg-paper">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            The process
-          </p>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Up and running{" "}
-            <span className="text-slate-400">in days, not months.</span>
+        <Reveal className="max-w-2xl">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-ink tracking-tight">
+            Up and running in days, not months.
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Our aviation specialists handle the heavy lifting. You focus on flying.
+          <p className="mt-4 text-lg text-ink-muted leading-relaxed">
+            Our aviation specialists handle the heavy lifting. You focus on
+            flying.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="relative">
-          {/* Connector line */}
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        <div className="mt-16 relative">
+          {/* Route line connecting waypoints, desktop only */}
+          <div className="hidden lg:block absolute top-[15px] left-[15px] right-[15px] h-px bg-line-strong" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid lg:grid-cols-4 gap-x-6 gap-y-10">
             {steps.map((step, i) => (
-              <div key={step.number} className="relative flex flex-col gap-4">
-                {/* Number */}
-                <div className="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center justify-center">
-                  <span className="text-blue-400 font-black text-lg">{step.number}</span>
+              <div key={step.number} className="relative">
+                {/* Waypoint marker, desktop */}
+                <div className="hidden lg:flex relative z-10 w-[30px] h-[30px] rounded-full bg-paper border-2 border-amber items-center justify-center mb-5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber" />
                 </div>
 
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-2">{step.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
-                </div>
-
-                {/* Arrow connector for mobile/tablet */}
-                {i < steps.length - 1 && (
-                  <div className="lg:hidden flex justify-start">
-                    <svg className="w-5 h-5 text-slate-600 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                {/* Mobile connector */}
+                {i > 0 && (
+                  <div className="lg:hidden absolute -top-6 left-[13px] w-px h-5 bg-line-strong" />
                 )}
+
+                <span className="font-mono text-xs text-amber-text tracking-wider">
+                  {step.number}
+                </span>
+                <h3 className="mt-1.5 font-display text-lg font-semibold text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm text-ink-muted leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import AICapabilities from "@/components/AICapabilities";
 import HowItWorks from "@/components/HowItWorks";
-import Stats from "@/components/Stats";
+import Compliance from "@/components/Compliance";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -16,7 +16,7 @@ export default function Home() {
       <Features />
       <AICapabilities />
       <HowItWorks />
-      <Stats />
+      <Compliance />
       <FAQ />
       <CTA />
       <Footer />

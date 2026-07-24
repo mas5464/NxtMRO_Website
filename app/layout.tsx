@@ -1,25 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow, Barlow_Semi_Condensed, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const barlow = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const barlowSemiCondensed = Barlow_Semi_Condensed({
+  variable: "--font-barlow-semi-condensed",
   subsets: ["latin"],
+  weight: ["600", "700", "900"],
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "NxtMRO — AI-Powered Airline MRO Platform",
   description:
-    "Next-generation Maintenance, Repair & Overhaul software for airlines. Predictive AI, digital work orders, compliance automation, and intelligent scheduling — all in one platform.",
+    "Next-generation Maintenance, Repair & Overhaul software for airlines. Predictive AI, digital work orders, compliance tracking, and intelligent scheduling — built around FAA and EASA workflows.",
   openGraph: {
     title: "NxtMRO — AI-Powered Airline MRO Platform",
     description:
-      "The AI-driven MRO platform that keeps your fleet airworthy, your team efficient, and your operation ahead of the curve.",
+      "The AI-driven MRO platform that keeps your fleet airworthy, your records audit-ready, and your team ahead of the schedule.",
     type: "website",
   },
 };
@@ -30,8 +41,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
-      <body className="antialiased bg-slate-950">{children}</body>
+    <html
+      lang="en"
+      className={`${barlow.variable} ${barlowSemiCondensed.variable} ${plexMono.variable}`}
+    >
+      <body className="antialiased bg-paper text-ink font-sans">{children}</body>
     </html>
   );
 }

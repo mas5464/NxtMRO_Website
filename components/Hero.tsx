@@ -2,78 +2,113 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
-      {/* Background grid */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(59,130,246,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+    <section className="relative bg-paper pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-8 items-center">
+          {/* Copy */}
+          <div className="md:col-span-7">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-[4.5rem] font-bold text-ink leading-[1.05] tracking-tight max-w-2xl">
+              Predict failures. Automate compliance. Keep flying.
+            </h1>
 
-      {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+            <p className="mt-6 text-lg text-ink-muted max-w-xl leading-relaxed">
+              NxtMRO is the AI-driven MRO platform for line maintenance and heavy
+              checks alike — work orders, parts, and compliance tracking in one
+              system built around FAA and EASA workflows.
+            </p>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 pb-24">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-wide uppercase">
-          <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-          AI-Powered Aviation MRO Platform
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6">
-          We built NxtMRO.{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-            The MRO platform
-          </span>{" "}
-          that thinks ahead.
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          AI-powered maintenance software built for airlines that can&apos;t afford downtime.
-          Predict failures, automate compliance, and keep every tail number airworthy.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link
-            href="https://www.nxtmro.app/login"
-            className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 hover:-translate-y-0.5"
-          >
-            Get started
-          </Link>
-          <a
-            href="#features"
-            className="text-slate-300 hover:text-white font-semibold text-base px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-all duration-200"
-          >
-            See what we do
-          </a>
-        </div>
-
-        {/* Trust badges */}
-        <div className="mt-16 flex flex-wrap justify-center gap-8 text-slate-500 text-sm">
-          {["FAA Compliant", "EASA Certified", "SOC 2 Type II", "99.99% Uptime SLA"].map((badge) => (
-            <div key={badge} className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {badge}
+            <div className="mt-9 flex flex-col sm:flex-row gap-4 sm:items-center">
+              <Link
+                href="https://www.nxtmro.app/login"
+                className="font-display font-semibold text-base bg-amber hover:bg-amber-strong text-ink px-7 py-3.5 rounded-md transition-colors text-center"
+              >
+                Get started
+              </Link>
+              <a
+                href="#features"
+                className="inline-flex items-center justify-center gap-1.5 text-base font-medium text-ink hover:text-amber-text px-7 py-3.5 rounded-md border border-line hover:border-amber transition-colors"
+              >
+                See the platform
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
-          ))}
+          </div>
+
+          {/* Technical diagram */}
+          <div className="md:col-span-5 instrument-settle">
+            <AircraftDiagram />
+          </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
     </section>
+  );
+}
+
+function AircraftDiagram() {
+  return (
+    <svg
+      viewBox="0 0 340 420"
+      className="w-full h-auto max-w-sm mx-auto"
+      role="img"
+      aria-label="Technical top-view diagram of an aircraft with station reference lines"
+    >
+      {/* Graticule frame + corner ticks */}
+      <g stroke="var(--color-amber)" strokeWidth="2" fill="none">
+        <path d="M20,42 L20,18 L44,18" />
+        <path d="M296,18 L320,18 L320,42" />
+        <path d="M320,378 L320,402 L296,402" />
+        <path d="M44,402 L20,402 L20,378" />
+      </g>
+
+      {/* Station reference lines */}
+      <g stroke="var(--color-line-strong)" strokeWidth="1" strokeDasharray="3 4">
+        <line x1="40" y1="70" x2="300" y2="70" />
+        <line x1="40" y1="330" x2="300" y2="330" />
+      </g>
+      <g fontFamily="var(--font-mono)" fontSize="10" fill="var(--color-ink-faint)">
+        <text x="252" y="66">STA 070</text>
+        <text x="248" y="344">STA 330</text>
+      </g>
+
+      {/* Heading tick arc */}
+      <g stroke="var(--color-line-strong)" strokeWidth="1" fill="none">
+        <path d="M280,50 A40,40 0 0 1 300,80" />
+      </g>
+      <text x="284" y="46" fontFamily="var(--font-mono)" fontSize="9" fill="var(--color-ink-faint)">
+        360
+      </text>
+
+      {/* Wings */}
+      <g fill="var(--color-ink)" fillOpacity="0.05" stroke="var(--color-ink)" strokeWidth="1.5">
+        <path d="M150,175 L25,255 L25,272 L150,235 Z" />
+        <path d="M190,175 L315,255 L315,272 L190,235 Z" />
+      </g>
+
+      {/* Horizontal stabilizers */}
+      <g fill="var(--color-ink)" fillOpacity="0.05" stroke="var(--color-ink)" strokeWidth="1.5">
+        <path d="M155,345 L100,380 L100,390 L155,365 Z" />
+        <path d="M185,345 L240,380 L240,390 L185,365 Z" />
+      </g>
+
+      {/* Fuselage */}
+      <path
+        d="M170,20 C158,20 150,45 150,70 L150,330 C150,360 158,385 170,392 C182,385 190,360 190,330 L190,70 C190,45 182,20 170,20 Z"
+        fill="var(--color-paper-raised)"
+        stroke="var(--color-ink)"
+        strokeWidth="1.5"
+      />
+
+      {/* Engines */}
+      <g fill="var(--color-amber)">
+        <ellipse cx="95" cy="228" rx="15" ry="6.5" />
+        <ellipse cx="245" cy="228" rx="15" ry="6.5" />
+      </g>
+
+      {/* Forward marker */}
+      <g fontFamily="var(--font-mono)" fontSize="10" fill="var(--color-ink-faint)">
+        <text x="176" y="15">FWD</text>
+      </g>
+      <line x1="170" y1="0" x2="170" y2="14" stroke="var(--color-ink-faint)" strokeWidth="1" />
+    </svg>
   );
 }
