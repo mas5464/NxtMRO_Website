@@ -2,21 +2,28 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const navLinks = [
+  { href: "#features", label: "Platform" },
+  { href: "#ai", label: "AI" },
+  { href: "#how-it-works", label: "Process" },
+  { href: "#compliance", label: "Compliance" },
+  { href: "#faq", label: "FAQ" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          {/* NxtMRO N icon */}
-          <div className="w-8 h-8 rounded-[7px] bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0">
+          <div className="w-8 h-8 rounded-[6px] bg-[#1c1a17] flex items-center justify-center shrink-0">
             <svg
               width="18"
               height="18"
               viewBox="0 0 32 32"
               fill="none"
-              stroke="#3b82f6"
+              stroke="var(--color-amber)"
               strokeWidth="5"
               strokeLinecap="round"
             >
@@ -26,40 +33,45 @@ export default function Navbar() {
               <path d="M6 27 18 13.8" />
             </svg>
           </div>
-          <span className="text-2xl font-black tracking-tight text-white">
-            Nxt<span className="text-blue-400">MRO</span>
+          <span className="font-display text-2xl font-bold tracking-tight text-ink">
+            Nxt<span className="text-amber-text">MRO</span>
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm text-slate-400">
-          <a href="#features" className="hover:text-white transition-colors">What we do</a>
-          <a href="#ai" className="hover:text-white transition-colors">AI</a>
-          <a href="#how-it-works" className="hover:text-white transition-colors">The process</a>
-          <a href="#stats" className="hover:text-white transition-colors">Results</a>
-          <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-ink-muted hover:text-ink transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
           <a
             href="https://www.nxtmro.app/login"
-            className="text-sm text-slate-300 hover:text-white transition-colors px-4 py-2"
+            className="text-sm font-medium text-ink-muted hover:text-ink transition-colors px-4 py-2"
           >
-            Log In
+            Log in
           </a>
           <a
             href="https://www.nxtmro.app/login"
-            className="text-sm bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-2 rounded-lg transition-colors"
+            className="text-sm font-display font-semibold tracking-wide bg-amber hover:bg-amber-strong text-ink px-5 py-2 rounded-md transition-colors"
           >
-            Get Started
+            Get started
           </a>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile toggle */}
         <button
-          className="md:hidden text-slate-400 hover:text-white"
+          className="md:hidden text-ink-muted hover:text-ink"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
@@ -73,13 +85,22 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-slate-950 border-t border-slate-800 px-6 py-4 flex flex-col gap-4 text-sm text-slate-300">
-          <a href="#features" onClick={() => setOpen(false)}>Features</a>
-          <a href="#ai" onClick={() => setOpen(false)}>AI Capabilities</a>
-          <a href="#how-it-works" onClick={() => setOpen(false)}>How It Works</a>
-          <a href="#stats" onClick={() => setOpen(false)}>Why NxtMRO</a>
-          <a href="https://www.nxtmro.app/login" className="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg text-center">
-            Log In
+        <div className="md:hidden bg-paper border-t border-line px-6 py-4 flex flex-col gap-4 text-sm">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-ink-muted"
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="https://www.nxtmro.app/login"
+            className="font-display font-semibold bg-amber text-ink px-5 py-2.5 rounded-md text-center mt-1"
+          >
+            Log in
           </a>
         </div>
       )}
