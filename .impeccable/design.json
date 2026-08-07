@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-06T00:00:00Z",
+  "title": "Design System: NxtMRO",
+  "extensions": {
+    "colorMeta": {
+      "chart-paper": { "role": "neutral", "displayName": "Chart Paper", "canonical": "oklch(98% 0.004 80)", "tonalRamp": ["oklch(15% 0.006 80)", "oklch(25% 0.006 80)", "oklch(35% 0.006 80)", "oklch(45% 0.006 80)", "oklch(55% 0.006 80)", "oklch(65% 0.006 80)", "oklch(80% 0.006 80)", "oklch(95% 0.006 80)"] },
+      "chart-paper-raised": { "role": "neutral", "displayName": "Chart Paper Raised", "canonical": "oklch(96.3% 0.006 80)" },
+      "graphite-ink": { "role": "neutral", "displayName": "Graphite Ink", "canonical": "oklch(21% 0.008 80)", "tonalRamp": ["oklch(15% 0.006 80)", "oklch(25% 0.006 80)", "oklch(35% 0.006 80)", "oklch(45% 0.006 80)", "oklch(55% 0.006 80)", "oklch(65% 0.006 80)", "oklch(80% 0.006 80)", "oklch(95% 0.006 80)"] },
+      "graphite-ink-muted": { "role": "neutral", "displayName": "Graphite Ink Muted", "canonical": "oklch(42% 0.008 80)" },
+      "graphite-ink-faint": { "role": "neutral", "displayName": "Graphite Ink Faint", "canonical": "oklch(60% 0.007 80)" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "oklch(87% 0.006 80)" },
+      "hairline-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "oklch(76% 0.008 80)" },
+      "instrument-amber": { "role": "primary", "displayName": "Instrument Amber", "canonical": "oklch(66% 0.15 55)", "tonalRamp": ["oklch(15% 0.15 55)", "oklch(25% 0.15 55)", "oklch(35% 0.15 55)", "oklch(45% 0.15 55)", "oklch(55% 0.15 55)", "oklch(65% 0.15 55)", "oklch(80% 0.15 55)", "oklch(95% 0.15 55)"] },
+      "instrument-amber-strong": { "role": "primary", "displayName": "Instrument Amber Strong", "canonical": "oklch(57% 0.16 50)" },
+      "instrument-amber-text": { "role": "primary", "displayName": "Instrument Amber Text", "canonical": "oklch(46% 0.135 48)" },
+      "panel-ink": { "role": "neutral", "displayName": "Panel Ink", "canonical": "oklch(17% 0.01 80)", "tonalRamp": ["oklch(10% 0.01 80)", "oklch(17% 0.01 80)", "oklch(28% 0.01 80)", "oklch(38% 0.01 80)", "oklch(50% 0.01 80)", "oklch(62% 0.01 80)", "oklch(78% 0.01 80)", "oklch(93% 0.006 80)"] },
+      "panel-hairline": { "role": "neutral", "displayName": "Panel Hairline", "canonical": "oklch(30% 0.012 80)" },
+      "panel-paper": { "role": "neutral", "displayName": "Panel Paper", "canonical": "oklch(93% 0.006 80)" },
+      "panel-paper-muted": { "role": "neutral", "displayName": "Panel Paper Muted", "canonical": "oklch(68% 0.01 80)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1 only." },
+      "headline": { "displayName": "Headline", "purpose": "Every section's H2." },
+      "title": { "displayName": "Title", "purpose": "Card/subsection H3s, FAQ questions, ledger labels, button labels." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy; lead paragraphs step up to 1.125rem at the same weight." },
+      "label": { "displayName": "Label", "purpose": "Mono-set data: index numbers, step numbers, SVG diagram annotations, ledger detail values." }
+    },
+    "motion": [
+      { "name": "instrument-settle", "value": "600ms ease-out both, opacity 0→1, scale(0.97)→scale(1), translateY(6px)→none", "purpose": "One-time entrance for the hand-built SVG technical diagrams (Hero aircraft, AI Capabilities radar, Compliance ledger). Skipped under prefers-reduced-motion." },
+      { "name": "reveal-fade", "value": "500ms ease-out, opacity 0→1, translateY(12px)→0, IntersectionObserver-triggered with a geometry fallback", "purpose": "Scroll-triggered entrance for section heading blocks (not every card). The Hero is deliberately excluded so its heading renders immediately for LCP." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA everywhere on the page — solid amber fill, dark ink text (verified higher contrast than white-on-amber).",
+      "html": "<button class=\"ds-btn-primary\">Get started</button>",
+      "css": ".ds-btn-primary { font-family: var(--font-barlow-semi-condensed), system-ui, sans-serif; font-weight: 600; font-size: 1rem; background: var(--color-amber); color: var(--color-ink); border: none; border-radius: 6px; padding: 14px 28px; cursor: pointer; transition: background-color 150ms; } .ds-btn-primary:hover { background: var(--color-amber-strong); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-amber); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Lower-commitment second action beside every primary CTA (\"See the platform\", \"Request a demo\").",
+      "html": "<button class=\"ds-btn-secondary\">See the platform →</button>",
+      "css": ".ds-btn-secondary { font-family: var(--font-barlow), system-ui, sans-serif; font-weight: 500; font-size: 1rem; background: transparent; color: var(--color-ink); border: 1px solid var(--color-line); border-radius: 6px; padding: 14px 28px; cursor: pointer; transition: color 150ms, border-color 150ms; } .ds-btn-secondary:hover { color: var(--color-amber-text); border-color: var(--color-amber); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-amber); outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed, translucent-blur header with the N-mark logo, inline links, and a compact primary button.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav-brand\"><span class=\"ds-nav-logo\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"#dfa23a\" stroke-width=\"5\" stroke-linecap=\"round\"><path d=\"M6 27V5\"/><path d=\"M26 27V5\"/><path d=\"M6 5l20 22\"/><path d=\"M6 27 18 13.8\"/></svg></span><span class=\"ds-nav-word\">Nxt<span class=\"ds-nav-word-accent\">MRO</span></span></div><a href=\"#\" class=\"ds-nav-link\">Platform</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 24px; height: 64px; background: color-mix(in oklab, var(--color-paper) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-line); } .ds-nav-brand { display: flex; align-items: center; gap: 10px; } .ds-nav-logo { width: 32px; height: 32px; border-radius: 6px; background: #1c1a17; display: flex; align-items: center; justify-content: center; } .ds-nav-word { font-family: var(--font-barlow-semi-condensed), system-ui, sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--color-ink); } .ds-nav-word-accent { color: var(--color-amber-text); } .ds-nav-link { font-family: var(--font-barlow), system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--color-ink-muted); text-decoration: none; transition: color 150ms; } .ds-nav-link:hover { color: var(--color-ink); } .ds-nav-link:focus-visible { outline: 2px solid var(--color-amber); outline-offset: 2px; }"
+    },
+    {
+      "name": "Manifest Row",
+      "kind": "custom",
+      "refersTo": "manifest-row",
+      "description": "Signature numbered technical-list row (Features section) — stands in for a card grid.",
+      "html": "<div class=\"ds-manifest-row\"><span class=\"ds-manifest-index\">01</span><div><h3 class=\"ds-manifest-title\">Digital work orders</h3><p class=\"ds-manifest-body\">Every job card, sign-off, and write-up moves to digital.</p></div></div>",
+      "css": ".ds-manifest-row { display: flex; gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--color-line); } .ds-manifest-index { font-family: var(--font-plex-mono), ui-monospace, monospace; font-size: 0.875rem; color: var(--color-amber-text); padding-top: 4px; width: 28px; flex-shrink: 0; } .ds-manifest-title { font-family: var(--font-barlow-semi-condensed), system-ui, sans-serif; font-weight: 600; font-size: 1.125rem; color: var(--color-ink); margin: 0 0 6px; } .ds-manifest-body { font-family: var(--font-barlow), system-ui, sans-serif; font-size: 0.875rem; color: var(--color-ink-muted); line-height: 1.625; margin: 0; max-width: 28rem; }"
+    },
+    {
+      "name": "Sequence Rail Marker",
+      "kind": "custom",
+      "refersTo": "sequence-rail-marker",
+      "description": "Signature waypoint marker (How It Works section) — amber ring with a solid center dot, connected by a route line.",
+      "html": "<div class=\"ds-rail-marker\"><span class=\"ds-rail-dot\"></span></div>",
+      "css": ".ds-rail-marker { width: 30px; height: 30px; border-radius: 9999px; background: var(--color-paper); border: 2px solid var(--color-amber); display: flex; align-items: center; justify-content: center; } .ds-rail-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--color-amber); }"
+    },
+    {
+      "name": "Ledger Row",
+      "kind": "custom",
+      "refersTo": "ledger-row",
+      "description": "Signature label/value row (Compliance section) — pairs with the audit-trail SVG diagram.",
+      "html": "<div class=\"ds-ledger-row\"><span class=\"ds-ledger-label\">Airworthiness directives</span><span class=\"ds-ledger-detail\">Tracked to closure</span></div>",
+      "css": ".ds-ledger-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0; border-top: 1px solid var(--color-line); } .ds-ledger-label { font-family: var(--font-barlow-semi-condensed), system-ui, sans-serif; font-weight: 600; font-size: 0.875rem; color: var(--color-ink); } .ds-ledger-detail { font-family: var(--font-plex-mono), ui-monospace, monospace; font-size: 0.75rem; color: var(--color-ink-muted); text-align: right; flex-shrink: 0; }"
+    },
+    {
+      "name": "FAQ Row",
+      "kind": "custom",
+      "refersTo": "faq-row",
+      "description": "Accordion row with a rotating +/× toggle in instrument amber.",
+      "html": "<div class=\"ds-faq-row\"><button class=\"ds-faq-question\" aria-expanded=\"false\"><span>Is NxtMRO a good fit for my airline?</span><span class=\"ds-faq-toggle\">+</span></button></div>",
+      "css": ".ds-faq-row { border-bottom: 1px solid var(--color-line); } .ds-faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; background: none; border: none; cursor: pointer; font-family: var(--font-barlow-semi-condensed), system-ui, sans-serif; font-weight: 600; font-size: 1rem; color: var(--color-ink); text-align: left; } .ds-faq-toggle { flex-shrink: 0; color: var(--color-amber-text); font-size: 1.25rem; line-height: 1; transition: transform 200ms; } .ds-faq-question[aria-expanded=\"true\"] .ds-faq-toggle { transform: rotate(45deg); } .ds-faq-question:focus-visible { outline: 2px solid var(--color-amber); outline-offset: 2px; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The system's one card-shaped surface — the AI Capabilities dominant capability panel.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Catch failures before they happen</h3><p class=\"ds-card-body\">Our models analyze sensor data to flag components trending toward failure.</p></div>",
+      "css": ".ds-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 8px; padding: 32px; } .ds-card-title { font-family: var(--font-barlow-semi-condensed), system-ui, sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--color-ink); margin: 0 0 16px; } .ds-card-body { font-family: var(--font-barlow), system-ui, sans-serif; font-size: 1rem; color: var(--color-ink-muted); line-height: 1.625; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Flight Manual",
+    "overview": "The system reads like the technical documents this software replaces — aircraft maintenance manuals, aeronautical charts, type certificates: precise, information-dense, printed-paper authority rather than screen-native gloss. Every AI-MRO competitor defaults to dark-mode-plus-glow; this system goes the other way on purpose, because a light, chart-like surface is the more differentiated and more honest choice for software that lives or dies on regulatory trust. The personality is precise, not sterile; authoritative, not corporate-cold. Warmth comes from a warm-neutral (not blue-black, not stark white) canvas and from a single confident amber accent — instrument caution lighting, runway-edge lighting — used exactly where it earns attention and nowhere else. The explicit anti-reference is the site's own prior look: generic dark-mode SaaS with blue/purple gradients, glow orbs, and a badge-eyebrow over every heading.",
+    "keyCharacteristics": [
+      "Warm paper canvas and graphite ink, never pure white or pure black",
+      "One signature accent color (instrument amber), spent sparingly",
+      "Flat, border-first depth — zero shadows anywhere in the implementation",
+      "Small, sharp radii — nothing rounder than 8px",
+      "Hand-built SVG technical diagrams (not photography, not stock UI mockups) carry the \"instrument panel\" motif: corner-tick graticule frames, station-reference lines, mono-set data labels"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Amber is the only saturated color in the system and is spent sparingly — button fill, small text/icon accents, thin diagram strokes. Never a large fill or background.", "section": "colors" },
+      { "name": "The No-Pure-Neutral Rule", "body": "Canvas and ink are always warm-tinted (oklch hue 80), never literal #fff/#000. This is what keeps \"paper\" and \"ink\" reading as material rather than as a default light theme.", "section": "colors" },
+      { "name": "The One Data Face Rule", "body": "IBM Plex Mono appears only where the content is genuinely data-shaped — an index, a station reference, a timestamp-style detail — never as decorative texture on ordinary copy.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Zero shadows anywhere in the implementation. Depth is conveyed entirely by hairline borders and a single subtle surface-tone step, plus one deliberate full-contrast reversal (the dark footer panel). Confirmed as a durable rule.", "section": "elevation" },
+      { "name": "The Corner-Tick Signature", "body": "The one recurring form motif beyond the radius scale: a graticule frame made of four short amber L-shaped corner brackets, drawn as raw SVG paths, appearing around each hand-built technical diagram. Use at deliberate moments on new diagram-shaped content, not as generic page decoration.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep amber to a single signature accent — button fill, small text/icon accents, thin diagram strokes.",
+      "Do use a hairline border or a chart-paper → chart-paper-raised tone step for depth, never a shadow.",
+      "Do keep radii at 8px or under; rounded-full only for genuinely circular elements.",
+      "Do build new supporting visuals as hand-drawn SVG technical diagrams in the established ink/amber/line-strong language, not photography or fake product-UI screenshots.",
+      "Do vary section vertical rhythm (py-16–py-28) rather than repeating one spacing value down the page.",
+      "Do wrap section heading blocks (not every card) in the Reveal component for the one scroll-entrance motion the system uses; skip it on the Hero, which must render immediately for LCP."
+    ],
+    "donts": [
+      "Don't use amber as a section background, large fill, or \"brand wash\" — its rarity is the point.",
+      "Don't add a shadow anywhere; reach for a border or a tone step instead.",
+      "Don't use graphite-ink-faint for real page content at normal text size — it fails WCAG AA (3.72:1) outside the SVG-diagram exception. Use ink-muted for anything that's genuine content rather than decorative diagram dressing.",
+      "Don't add an eyebrow/preheading label above a heading — the prior version of this page did this on every section and it was removed as decorative filler.",
+      "Don't invent stats, testimonials, or certification badges — see PRODUCT.md's Evidence on Hand; the prior version of this page fabricated exactly this kind of proof and it was removed for being untrue.",
+      "Don't \"fix\" the nav logo chip's or the favicon's literal #1c1a17 / #dfa23a hex values into token references — both render through Satori (next/og's ImageResponse) or are hand-matched to it, and Satori does not support CSS custom properties or oklch()."
+    ]
+  }
+}
