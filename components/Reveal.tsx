@@ -15,11 +15,6 @@ export default function Reveal({
     const node = ref.current;
     if (!node) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
-
     // Direct geometry check, not just the observer callback: a fast or
     // programmatic scroll (flick, End key, scroll restoration) can jump far
     // enough in one step that IntersectionObserver never reports a
@@ -29,11 +24,6 @@ export default function Reveal({
       const rect = node.getBoundingClientRect();
       return rect.top < window.innerHeight && rect.bottom > 0;
     };
-
-    if (isInView()) {
-      setVisible(true);
-      return;
-    }
 
     const reveal = () => {
       setVisible(true);
@@ -45,6 +35,8 @@ export default function Reveal({
       if (isInView()) reveal();
     };
 
+    // The observer also reports the initial state, covering content that is
+    // already in view on mount.
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) reveal();
@@ -65,7 +57,7 @@ export default function Reveal({
       ref={ref}
       className={`transition-all duration-500 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-      } ${className}`}
+      } motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none ${className}`}
     >
       {children}
     </div>
