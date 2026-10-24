@@ -28,6 +28,8 @@
 - [ ] Integration with CRM (HubSpot / Salesforce)
 - [ ] Analytics (Vercel Analytics or PostHog)
 
+- [x] Security hardening: dependency upgrade + security headers ✅ 2026-10-24
+
 ### Backlog
 - [ ] Multi-language support (ES, FR)
 - [ ] Video demo embed

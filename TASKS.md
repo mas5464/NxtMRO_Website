@@ -21,6 +21,11 @@
 - Real OG/social share image
 - A real lint run outside this session
 
+### Security pass (2026-10-24)
+- Upgraded Next.js 16.2.6 → 16.4.3 (critical/high advisories incl. next/og RCE); `npm audit` now 0 vulnerabilities
+- Added security headers in `next.config.ts`: CSP, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy, HSTS includeSubDomains+preload
+- Lint now runs and passes; fixed the one error (`Reveal.tsx` setState-in-effect)
+
 ### Next Session
-- Run `npm run lint` in a normal terminal and fix anything it surfaces
+- Deploy to apply headers on www.nxtmro.com; optionally submit to hstspreload.org
 - Deploy to Vercel once real content/legal pages above are ready
